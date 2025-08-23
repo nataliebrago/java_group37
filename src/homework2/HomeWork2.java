@@ -31,7 +31,7 @@ public class HomeWork2 {
         if (t > -5) {
             System.out.println("Warm");
         } else if (t <= -5 && t >= -20) {
-            System.out.println("2Normal");
+            System.out.println("Normal");
         } else {
             System.out.println("Cold");
         }
@@ -58,12 +58,12 @@ public class HomeWork2 {
     7 14 21 28 35 42 49 56 63 70 77 84 91 98. В решении используйте цикл while.
     */
     public void task11() {
-        System.out.println("7 14 21 28 35 42 49 56 63 70 77 84 91 98:");
+        System.out.print("Последовательность чисел от 7 до 98: ");
         // Инициализируем переменную-счетчик
         int i = 7;
         // Цикл while выполняется пока условие истинно
         while (i <= 98) {
-            System.out.println(i);
+            System.out.print(i + " ");
             i = i + 7;
         }
     }
@@ -77,7 +77,7 @@ public class HomeWork2 {
     public void task12() {
         int number = 0;
         boolean isValidInput = false;
-        System.out.print("Введите целое положительное число: ");
+        System.out.println("\nВведите целое положительное число: ");
         while (!isValidInput) {
             // Проверяем, ввел ли пользователь корректное целое число
             if (scan.hasNextInt()) {

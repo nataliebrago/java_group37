@@ -18,10 +18,10 @@ public class HomeWorkBrago {
         mHomeWork1.task7(5,6);
         */
         HomeWork2 mHomeWork2 = new HomeWork2();
-        //mHomeWork2.task8();
-        //mHomeWork2.task9();
-        //mHomeWork2.task10();
-        //mHomeWork2.task11();
+        mHomeWork2.task8();
+        mHomeWork2.task9();
+        mHomeWork2.task10();
+        mHomeWork2.task11();
         mHomeWork2.task12();
 
     }
