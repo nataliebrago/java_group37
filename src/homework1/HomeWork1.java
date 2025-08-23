@@ -1,20 +1,11 @@
-public class HomeWork1_Brago {
+package homework1;
 
-    public static void main(String[] args) {
-        task1(8, 3);
-        task2(31);
-        task3(318);
-        task4(5.2);
-        task5(23, 4);
-        task6(5, 4);
-        task7(5,6);
-    }
-
+public class HomeWork1 {
     /*Задача 1:
-    Написать приложение, которое будет вычислять и выводить значение
-     по формуле: a=4*(b+c-1)/2; b и c задаем в коде самостоятельно.
-     */
-    public static void task1(int b, int c) {
+ Написать приложение, которое будет вычислять и выводить значение
+  по формуле: a=4*(b+c-1)/2; b и c задаем в коде самостоятельно.
+  */
+    public void task1(int b, int c) {
         // Вычисляем а по формуле
         int result = 4 * (b + c - 1) / 2;
         // Выводим результат
@@ -25,7 +16,7 @@ public class HomeWork1_Brago {
     В переменной n хранится двузначное число. Создайте программу, вычисляющую и выводящую на экран сумму цифр n.
     Например: n =26, в результате мы должны получить 8 (2+6).
     */
-    public static void task2(int n) {
+    public void task2(int n) {
         // Вычисляем сумму цифр
         int number1 = n / 10; // Первая цифра
         int number2 = n % 10; // Вторая цифра
@@ -39,7 +30,7 @@ public class HomeWork1_Brago {
     В переменной n хранится трёхзначное число. Создайте программу,
     вычисляющую и выводящую на экран сумму цифр n. Например: n =126, в результате мы должны получить 9 (1+2+6).
     */
-    public static void task3(int u) {
+    public void task3(int u) {
         // Вычисляем сумму цифр
         int num1 = u / 100; // Первая цифра
         int num2 = (u / 10) % 10; // Вторая цифра
@@ -53,7 +44,7 @@ public class HomeWork1_Brago {
     В переменной n хранится вещественное число с ненулевой дробной частью.
     Создайте программу, округляющую число n до ближайшего целого и выводящую результат на экран.
      */
-    public static void task4(double k) {
+    public void task4(double k) {
         // Проверка на ненулевую дробную часть
         if (k % 1 == 0) {
             System.out.println("Число должно иметь ненулевую дробную часть.");
@@ -66,7 +57,7 @@ public class HomeWork1_Brago {
     В переменных q и w хранятся два натуральных числа. Создайте программу, выводящую на экран результат деления q на w с остатком.
     Пример вывода программы (для случая, когда в q хранится 21, а в w хранится 8):  21 / 8 = 2 и 5 в остатке.
     */
-    public static void task5(int q, int w) {
+    public void task5(int q, int w) {
         // Проверяем, что числа являются натуральными
         if (q <= 0 || w <= 0) {
             System.out.println("Оба числа должны быть натуральными (больше нуля).");
@@ -88,7 +79,7 @@ public class HomeWork1_Brago {
     sout(a); //выведет 2
     sout(b); //выведет 1
     */
-    public static void task6(int s, int d) {
+    public void task6(int s, int d) {
         s = s + d; // Теперь s равно 9 (5 + 4)
         d = s - d; // Теперь d равно 5 (9 - 4), т.е. первоначальное значение s
         s = s - d; // Теперь s равно 4 (9 - 5), т.е. первоначальное значение d
@@ -98,7 +89,7 @@ public class HomeWork1_Brago {
         System.out.println("Значение: " + d); // 5
     }
 
-    public static void task7(int t, int h) {
+    public void task7(int t, int h) {
         // Используем временную переменную для обмена значениями
         int temp = t;
         t = h;
