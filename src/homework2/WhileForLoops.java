@@ -2,7 +2,7 @@ package homework2;
 
 import java.util.Scanner;
 
-public class HomeWork2 {
+public class WhileForLoops {
     Scanner scan = new Scanner(System.in);
 
     /*Задача 1:
