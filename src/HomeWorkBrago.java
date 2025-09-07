@@ -12,6 +12,7 @@ import homework7_1.Circle;
 import homework7_1.Rectangle;
 import homework7_1.Shape;
 import homework7_1.Triangle;
+import homework7_2.MyCat;
 
 public class HomeWorkBrago {
 
@@ -86,7 +87,7 @@ public class HomeWorkBrago {
 
         // Создаём массив из 5 фигур
 
-        Shape[] shapes = new Shape[5];
+        /*Shape[] shapes = new Shape[5];
         shapes[0] = new Triangle(3, 4, 5);          // Прямоугольный треугольник
         shapes[1] = new Rectangle(4, 6);
         shapes[2] = new Circle(5);
@@ -100,6 +101,20 @@ public class HomeWorkBrago {
         }
 
         System.out.printf("Сумма периметров всех фигур: %.2f%n", totalPerimeter);
+         */
+
+        MyCat original = new MyCat("Сеня", 11);
+        MyCat copy = original.clone();
+
+        System.out.println("Оригинал: " + original);
+        System.out.println("Копия: " + copy);
+
+/**
+ Сравниваем объекты по ссылке с помощью ==:
+ original == copy вернёт false, потому что это два разных объекта в памяти.
+ Это доказывает, что clone() создал новый объект, а не просто скопировал ссылку
+ */
+        System.out.println("Оригинал == Копия? " + (original == copy));
     }
 }
 

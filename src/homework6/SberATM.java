@@ -71,7 +71,7 @@ public class SberATM {
         return true;
     }
 
-    // Дополнительный метод для вывода текущего состояния (необязательный, но полезный)
+    // Дополнительный метод для вывода текущего состояния
     public void displayStatus() {
         int totalMoney = 20 * countOfNote20 + 50 * countOfNote50 + 100 * countOfNote100;
         System.out.println("Купюры: 20 - " + countOfNote20 + ", 50 - " + countOfNote50 + ", 100 - " + countOfNote100 + ". Общий баланс: " + totalMoney);
