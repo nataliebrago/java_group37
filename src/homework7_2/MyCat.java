@@ -30,7 +30,7 @@ public class MyCat implements Cloneable {
         }
     }
 
-    //Метод toString() возвращает строковое представление объекта.
+    //Метод toString() возвращает строковое представление объекта
     @Override
     public String toString() {
         return "MyCat{name='" + name + "', age=" + age + "}";
