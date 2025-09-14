@@ -1,18 +1,15 @@
-import homework1.Operators;
-import homework2.WhileForLoops;
-import homework4.OneDimensionalArrays;
-import homework5.MultidimensionalArrays;
-import homework6.CreditCard;
-import homework6.SberATM;
-import homework7.Accountant;
-import homework7.Director;
-import homework7.Position;
-import homework7.Worker;
-import homework7_1.Circle;
-import homework7_1.Rectangle;
-import homework7_1.Shape;
-import homework7_1.Triangle;
-import homework7_2.MyCat;
+import homework10.UserSystem;
+import homework8_2.Patient;
+import homework8_2.Therapist;
+import homework8_3.Apple;
+import homework9.Animal;
+import homework9.Dog;
+import homework9.Rabbit;
+import homework9.Tiger;
+import homework9_1.Dog1;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 public class HomeWorkBrago {
 
@@ -76,7 +73,8 @@ public class HomeWorkBrago {
         // Выводим статус
         atm.displayStatus();*/
 
-        /*Position director = new Director();  // Создание объекта Director как Position (полиморфизм).
+        /*
+        Position director = new Director();  // Создание объекта Director как Position (полиморфизм).
         Position worker = new Worker();      // Создание объекта Worker.
         Position accountant = new Accountant();  // Создание объекта Accountant.
 
@@ -87,7 +85,8 @@ public class HomeWorkBrago {
 
         // Создаём массив из 5 фигур
 
-        /*Shape[] shapes = new Shape[5];
+        /*
+        Shape[] shapes = new Shape[5];
         shapes[0] = new Triangle(3, 4, 5);          // Прямоугольный треугольник
         shapes[1] = new Rectangle(4, 6);
         shapes[2] = new Circle(5);
@@ -101,7 +100,7 @@ public class HomeWorkBrago {
         }
 
         System.out.printf("Сумма периметров всех фигур: %.2f%n", totalPerimeter);
-         */
+
 
         MyCat original = new MyCat("Сеня", 11);
         MyCat copy = original.clone();
@@ -109,12 +108,132 @@ public class HomeWorkBrago {
         System.out.println("Оригинал: " + original);
         System.out.println("Копия: " + copy);
 
-/**
+
  Сравниваем объекты по ссылке с помощью ==:
  original == copy вернёт false, потому что это два разных объекта в памяти.
  Это доказывает, что clone() создал новый объект, а не просто скопировал ссылку
- */
+
         System.out.println("Оригинал == Копия? " + (original == copy));
+         */
+
+        /*House house = new House();
+        Garage garage = new Garage();
+
+        System.out.println("Тип объекта house: " + house.getType());
+        System.out.println("Тип объекта garage: " + garage.getType());
+         */
+
+        /*Person person = new Person();
+
+        Демонстрируем доступ к полям через геттеры и напрямую (где возможно)
+        System.out.println("\nФактические значения через геттеры:");
+        System.out.println("getName(): " + person.getName());   // Через геттер
+        System.out.println("getAge(): " + person.getAge());     // Через геттер
+        System.out.println("getGender(): " + person.getGender()); // Через геттер (обязательно)
+
+        System.out.println("\nПрямой доступ к полям (где возможно):");
+        System.out.println("person.name: " + person.name);      // Прямой доступ (public)
+        System.out.println("person.age: " + person.age);      // Прямой доступ (default, в том же пакете)
+        System.out.println("person.gender: " + person.gender); // Ошибка компиляции! Приватное поле
+         */
+
+        Patient patient = new Patient();
+        patient.setTreatmentPlan(1); // План лечения: 1 = хирург
+
+        Therapist therapist = new Therapist();
+        therapist.assignDoctor(patient);
+
+        System.out.println("Назначенный врач: " + patient.getDoctor().getClass().getSimpleName());
+
+
+        /*Apple apple = new Apple("зелёный");
+        System.out.println("Изначальный цвет: " + apple.getColor());
+
+        try {
+            // Получаем объект Field для приватного поля "color"
+            Field colorField = Apple.class.getDeclaredField("color");
+
+            // Делаем поле доступным (приватное --> доступно для изменения)
+            colorField.setAccessible(true);
+
+            // Изменяем значение поля color на "красный"
+            colorField.set(apple, "красный");
+
+            System.out.println("Изменённый цвет: " + apple.getColor());
+
+        } catch (NoSuchFieldException | IllegalAccessException e)  {
+
+            // Обработка исключений
+            System.out.println("Ошибка при доступе к полю: " + e.getMessage());
+        }
+         */
+
+       /* // Создаём объекты животных
+        Animal dog = new Dog();
+        Animal tiger = new Tiger();
+        Animal rabbit = new Rabbit();
+
+        // Тестируем голоса
+        System.out.println("=== Voices ===");
+        dog.voice();
+        tiger.voice();
+        rabbit.voice();
+
+        // Тестируем еду
+        System.out.println("\n=== Eating ===");
+
+        // Dog
+        dog.eat("Meat");      // Положительно
+        dog.eat("Grass");     // Отрицательно
+        dog.eat("Fish");      // Отрицательно
+
+        // Tiger
+        tiger.eat("Meat");    // Положительно
+        tiger.eat("Grass");   // Отрицательно
+
+        // Rabbit
+        rabbit.eat("Grass");  // Положительно
+        rabbit.eat("Meat");   // Отрицательно
+        rabbit.eat("Carrot"); // Отрицательно
+
+        */
+
+        /*Dog1 dog = Dog1.createDog ("Ричи");  // Создание через статический метод
+        dog.voice();
+        dog.eat();
+         */
+
+        /*try {
+            // Получаем класс Dog
+            Class<?> dogClass = Class.forName("Dog1");
+
+            // Получаем приватный конструктор
+            Constructor<?> constructor = dogClass.getDeclaredConstructor(String.class);
+
+            // Делаем конструктор доступным (обход private)
+            constructor.setAccessible(true);
+
+            // Создаём объект через рефлексию
+            Dog1 dog = (Dog1) constructor.newInstance("Тэри");
+
+            // Вызываем методы
+            dog.voice();
+            dog.eat();
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+
+         */
+
+        /*UserSystem user1 = new UserSystem("nataliebrago", "qabrago@gmail.com", 30);
+        UserSystem user2 = new UserSystem("nataliebrago", "qabrago@gmail.com", 30);
+        UserSystem user3 = new UserSystem("qabrago", "nataliebrago@gmail.com", 32);
+
+        System.out.println(user1.toString()); // UserSystem{login='nataliebrago', email='qabrago@gmail.com', age=30}
+        System.out.println(user2.toString());
+        System.out.println("user1.equals(user2)? " + user1.equals(user2)); // true
+        System.out.println("user1.equals(user3)? " + user1.equals(user3)); // false
+         */
     }
 }
 
