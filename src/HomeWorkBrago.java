@@ -1,4 +1,7 @@
 import homework10.UserSystem;
+import homework11.*;
+import homework12.AbbreviationFinder;
+import homework12.InfoExtractor;
 import homework8_2.Patient;
 import homework8_2.Therapist;
 import homework8_3.Apple;
@@ -137,13 +140,13 @@ public class HomeWorkBrago {
         System.out.println("person.gender: " + person.gender); // Ошибка компиляции! Приватное поле
          */
 
-        Patient patient = new Patient();
+        /*Patient patient = new Patient();
         patient.setTreatmentPlan(1); // План лечения: 1 = хирург
 
         Therapist therapist = new Therapist();
         therapist.assignDoctor(patient);
 
-        System.out.println("Назначенный врач: " + patient.getDoctor().getClass().getSimpleName());
+        System.out.println("Назначенный врач: " + patient.getDoctor().getClass().getSimpleName());*/
 
 
         /*Apple apple = new Apple("зелёный");
@@ -234,6 +237,24 @@ public class HomeWorkBrago {
         System.out.println("user1.equals(user2)? " + user1.equals(user2)); // true
         System.out.println("user1.equals(user3)? " + user1.equals(user3)); // false
          */
+
+        /*MinMaxString minMaxString = new MinMaxString();
+        minMaxString.findMinMaxString();*/
+
+        //StringOrderByLength stringOrderByLength = new StringOrderByLength();
+        //stringOrderByLength.sortStringLength();
+        //UnderAverageLengthDisplay underAverageLengthDisplay = new UnderAverageLengthDisplay();
+        //underAverageLengthDisplay.underAverageLength();
+        //UniqueWord uniqueWord = new UniqueWord();
+        //uniqueWord.uniqueWordMethod();
+        //DoubleLetters doubleLetters = new DoubleLetters();
+        //doubleLetters.doubleLettersMethod();
+        //PalindromeTester palindromeTester = new PalindromeTester();
+        //palindromeTester.palindromeTesterMethod();
+        //AbbreviationFinder abbreviationFinder = new AbbreviationFinder();
+        //abbreviationFinder.abbreviationFinderMethod();
+        InfoExtractor infoExtractor = new InfoExtractor();
+        infoExtractor.infoExtractorMethod();
+
     }
 }
-
