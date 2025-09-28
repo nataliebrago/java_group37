@@ -1,4 +1,8 @@
+import homework14.DocumentValidator;
 import homework14.LongestWordFinder;
+
+import java.io.*;
+import java.util.Scanner;
 
 public class HomeWorkBrago {
 
@@ -275,7 +279,7 @@ public class HomeWorkBrago {
         //NotFinallyMethod notFinallyMethod = new NotFinallyMethod();
         //notFinallyMethod.notFinallyMethod();
 
-        String inputFile = "src/main/resources/romeo-and-juliet.txt";  // Путь к входному файлу
+        /*String inputFile = "src/main/resources/romeo-and-juliet.txt";  // Путь к входному файлу
         String outputFile = "longest_word.txt";// Путь к выходному файл
 
         LongestWordFinder longestWordFinder = new LongestWordFinder();
@@ -286,5 +290,60 @@ public class HomeWorkBrago {
         } else {
             System.out.println("Файл не найден, пустой или не содержит слов.");
         }
+         */
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите путь к входному файлу (TXT): ");
+        String inputPath = scanner.nextLine().trim();
+
+        // Проверяем, существует ли файл
+        File inputFile = new File(inputPath);
+        if (!inputFile.exists()) {
+            System.err.println("Ошибка: Файл не найден по пути " + inputPath);
+            return;
+        }
+
+        // Пути к выходным файлам (в текущей директории)
+        String validPath = "valid_report.txt";
+        String invalidPath = "invalid_report.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter validWriter = new BufferedWriter(new FileWriter(validPath));
+             BufferedWriter invalidWriter = new BufferedWriter(new FileWriter(invalidPath))) {
+
+            String line;
+            int lineNumber = 1;
+            while ((line = reader.readLine()) != null) {
+                line = line.trim(); // Убираем лишние пробелы
+                if (line.isEmpty()) {
+                    // Пропускаем пустые строки
+                    lineNumber++;
+                    continue;
+                }
+
+                // Проверка валидности
+                String reason = DocumentValidator.validateDocumentNumber(line);
+                if (reason == null) {
+                    // Валидный: записываем в valid_report.txt
+                    validWriter.write(line);
+                    validWriter.newLine();
+                    System.out.println("Строка " + lineNumber + ": Валидный номер - " + line);
+                } else {
+                    // Невалидный: записываем с причиной в invalid_report.txt
+                    invalidWriter.write(line + " - " + reason);
+                    invalidWriter.newLine();
+                    System.out.println("Строка " + lineNumber + ": Невалидный номер - " + line + " (" + reason + ")");
+                }
+                lineNumber++;
+            }
+
+            System.out.println("\nОбработка завершена!");
+            System.out.println("Валидные номера сохранены в: " + validPath);
+            System.out.println("Невалидные номера сохранены в: " + invalidPath);
+
+        } catch (IOException e) {
+            System.err.println("Ошибка при чтении/записи файлов: " + e.getMessage());
+        }
+        scanner.close();
     }
 }
