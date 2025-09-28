@@ -1,18 +1,4 @@
-import homework10.UserSystem;
-import homework11.*;
-import homework12.AbbreviationFinder;
-import homework12.InfoExtractor;
-import homework8_2.Patient;
-import homework8_2.Therapist;
-import homework8_3.Apple;
-import homework9.Animal;
-import homework9.Dog;
-import homework9.Rabbit;
-import homework9.Tiger;
-import homework9_1.Dog1;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import homework14.LongestWordFinder;
 
 public class HomeWorkBrago {
 
@@ -253,8 +239,52 @@ public class HomeWorkBrago {
         //palindromeTester.palindromeTesterMethod();
         //AbbreviationFinder abbreviationFinder = new AbbreviationFinder();
         //abbreviationFinder.abbreviationFinderMethod();
-        InfoExtractor infoExtractor = new InfoExtractor();
-        infoExtractor.infoExtractorMethod();
+        //InfoExtractor infoExtractor = new InfoExtractor();
+        //infoExtractor.infoExtractorMethod();
+        //HandlingExceptions handlingExceptions = new HandlingExceptions();
+        //handlingExceptions.arrayIndexOutOfBoundsExceptionMethod();
+        //handlingExceptions.arithmeticExceptionMethod();
+        //handlingExceptions.exceptionMethods();
+        /* Попытка создать объект Person с возрастом менее 18 лет
 
+        try {
+            Person underagePerson = new Person(16, "Иван");
+            System.out.println("Объект создан: " + underagePerson);
+        } catch (AgeValidationException e) {
+            System.out.println("Исключение при создании объекта: " + e.getMessage());
+        }
+
+        // Попытка создать объект Person с возрастом 18 лет и более
+        try {
+            Person adultPerson = new Person(25, "Даша");
+            System.out.println("Объект создан: " + adultPerson);
+        } catch (AgeValidationException e) {
+            System.out.println("Исключение при создании объекта: " + e.getMessage());
+        }
+    */
+       /* try {
+            boolean isValid = UserCriteria.userCriteriaMethod("nataliebrago ", "Password0", "Password0");
+            System.out.println("Валидация успешна: " + isValid);  // true
+        } catch (WrongLoginException e) {
+            System.out.println("Ошибка логина: " + e.getMessage());
+        } catch (WrongPasswordException e) {
+            System.out.println("Ошибка пароля: " + e.getMessage());
+        }
+        */
+
+        //NotFinallyMethod notFinallyMethod = new NotFinallyMethod();
+        //notFinallyMethod.notFinallyMethod();
+
+        String inputFile = "src/main/resources/romeo-and-juliet.txt";  // Путь к входному файлу
+        String outputFile = "longest_word.txt";// Путь к выходному файл
+
+        LongestWordFinder longestWordFinder = new LongestWordFinder();
+        String longestWord = longestWordFinder.findLongestWord(inputFile);
+        if (longestWord != null && !longestWord.isEmpty()) {
+            longestWordFinder.writeToFile(outputFile, longestWord);
+            System.out.println("Самое длинное слово: " + longestWord + " (записано в " + outputFile + ")");
+        } else {
+            System.out.println("Файл не найден, пустой или не содержит слов.");
+        }
     }
 }
