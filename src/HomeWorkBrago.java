@@ -1,17 +1,4 @@
-import homework14.DocumentValidator;
-import homework14.LongestWordFinder;
-import homework15.AnimalCollection;
-import homework15.RemoveDuplicates;
-import homework15.Student;
-import homework16.MyArrayList;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-import static homework15.Student.*;
+import homework15_1.MyArrayList;
 
 public class HomeWorkBrago {
 
