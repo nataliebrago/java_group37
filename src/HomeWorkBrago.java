@@ -3,6 +3,7 @@ import homework14.LongestWordFinder;
 import homework15.AnimalCollection;
 import homework15.RemoveDuplicates;
 import homework15.Student;
+import homework16.MyArrayList;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -380,7 +381,7 @@ public class HomeWorkBrago {
     }
          */
 
-        // Создаём коллекцию студентов
+        /*// Создаём коллекцию студентов
         List<Student> students = new ArrayList<>();
         students.add(new Student("Алина Ковалева", "Группа ФМК", 1, Arrays.asList(2, 2, 2)));
         students.add(new Student("Михаил Король", "Группа ФНЯ", 2, Arrays.asList(4, 3, 4))); // Средний <3
@@ -408,5 +409,26 @@ public class HomeWorkBrago {
         printStudents(students, 3); // Курс 3
         printStudents(students, 4); // Курс 4
         printStudents(students, 5); // Курс 5
+    }
+         */
+        MyArrayList<String> list = new MyArrayList<>();
+
+        // Добавление
+        list.add("Кот Сеня");
+        list.add("Кот Васька");
+        list.add("Попугай Кеша");
+        System.out.println("Размер: " + list.size()); // 3
+        System.out.println("Элемент 1: " + list.get(1)); //
+
+        // Проверка
+        System.out.println("Есть 'Кот'? " + list.contains("Кот Сеня")); // true
+
+        // Удаление
+        list.remove(1);
+        System.out.println("После удаления: " + list.get(1)); // Попугай Кеша
+
+        // Очистка
+        list.clear();
+        System.out.println("Размер после очистки: " + list.size()); // 0
     }
 }
