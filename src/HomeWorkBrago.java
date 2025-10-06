@@ -1,8 +1,16 @@
 import homework14.DocumentValidator;
 import homework14.LongestWordFinder;
+import homework15.AnimalCollection;
+import homework15.RemoveDuplicates;
+import homework15.Student;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
+import static homework15.Student.*;
 
 public class HomeWorkBrago {
 
@@ -292,7 +300,7 @@ public class HomeWorkBrago {
         }
          */
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         System.out.print("Введите путь к входному файлу (TXT): ");
         String inputPath = scanner.nextLine().trim();
 
@@ -345,5 +353,60 @@ public class HomeWorkBrago {
             System.err.println("Ошибка при чтении/записи файлов: " + e.getMessage());
         }
         scanner.close();
+         */
+
+        //RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        //removeDuplicates.removeDuplicatesMethod();
+
+        /*AnimalCollection collection = new AnimalCollection();
+
+        //Добавляем животных (в начало)
+        collection.addAnimal("Кот1");
+        collection.addAnimal("Кот2");
+        collection.addAnimal("Кот3");
+
+        // Показываем коллекцию
+        System.out.println("Текущая коллекция: " + collection.getAnimals());
+
+        // Удаляем из конца
+        collection.removeAnimal();
+        collection.removeAnimal();
+
+        // Показываем после удалений
+        System.out.println("После удалений: " + collection.getAnimals());
+
+        // Попытка удалить из пустой коллекции
+        collection.removeAnimal();
+    }
+         */
+
+        // Создаём коллекцию студентов
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Алина Ковалева", "Группа ФМК", 1, Arrays.asList(2, 2, 2)));
+        students.add(new Student("Михаил Король", "Группа ФНЯ", 2, Arrays.asList(4, 3, 4))); // Средний <3
+        students.add(new Student("Наталья Медведева", "Группа ФАЯ", 1, Arrays.asList(5, 4, 4)));
+        students.add(new Student("Дарья Орлянская", "Группа ФМК", 3, Arrays.asList(3, 3, 4))); // Средний =2.66 <3
+
+        System.out.println("До удаления:");
+        for (Student s : students) {
+            System.out.println(s);
+        }
+
+        // Удаление студентов со средним баллом < 3
+        removeStudentsWithLowAverage(students);
+
+        System.out.println("\nПосле обработки (удалены с ср.баллом <3, остальные переведены на следующий курс):");
+        for (Student s : students) {
+            System.out.println(s);
+        }
+
+        // Повышение курса студентам со средним >= 3
+        promoteStudents(students);
+
+        // Печатаем студентов по курсам
+        printStudents(students, 2); // Курс 2
+        printStudents(students, 3); // Курс 3
+        printStudents(students, 4); // Курс 4
+        printStudents(students, 5); // Курс 5
     }
 }
