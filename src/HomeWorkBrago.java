@@ -1,5 +1,8 @@
 import homework15_1.MyArrayList;
 
+import static homework16.Approach.pairs;
+import static homework16.WordMultiple.wordMultiple;
+
 public class HomeWorkBrago {
 
     public static void main(String[] args) {
@@ -400,7 +403,7 @@ public class HomeWorkBrago {
          */
         MyArrayList<String> list = new MyArrayList<>();
 
-        // Добавление
+       /* // Добавление
         list.add("Кот Сеня");
         list.add("Кот Васька");
         list.add("Попугай Кеша");
@@ -417,5 +420,14 @@ public class HomeWorkBrago {
         // Очистка
         list.clear();
         System.out.println("Размер после очистки: " + list.size()); // 0
+        */
+
+        System.out.println(wordMultiple(new String[]{"a", "b", "a", "c", "b"}));
+        System.out.println(wordMultiple(new String[]{"c", "b", "a"}));
+        System.out.println(wordMultiple(new String[]{"c", "c", "c", "c"}));
+
+        System.out.println(pairs(new String[]{"code", "bug"})); // {"b": "g", "c": "e"}
+        System.out.println(pairs(new String[]{"man", "moon", "main"})); // {"m": "n"}
+        System.out.println(pairs(new String[]{"man", "moon", "good", "night"})); // {"g": "d", "m": "n", "n": "t"}
     }
 }
