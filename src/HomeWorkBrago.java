@@ -1,6 +1,7 @@
 import homework15_1.MyArrayList;
 
 import static homework16.Approach.pairs;
+import static homework16.BracketBalanceChecker.isBalanced;
 import static homework16.WordMultiple.wordMultiple;
 
 public class HomeWorkBrago {
@@ -422,12 +423,22 @@ public class HomeWorkBrago {
         System.out.println("Размер после очистки: " + list.size()); // 0
         */
 
-        System.out.println(wordMultiple(new String[]{"a", "b", "a", "c", "b"}));
+        /*System.out.println(wordMultiple(new String[]{"a", "b", "a", "c", "b"}));
         System.out.println(wordMultiple(new String[]{"c", "b", "a"}));
         System.out.println(wordMultiple(new String[]{"c", "c", "c", "c"}));
 
         System.out.println(pairs(new String[]{"code", "bug"})); // {"b": "g", "c": "e"}
         System.out.println(pairs(new String[]{"man", "moon", "main"})); // {"m": "n"}
         System.out.println(pairs(new String[]{"man", "moon", "good", "night"})); // {"g": "d", "m": "n", "n": "t"}
+    }
+
+         */
+
+        System.out.println(isBalanced(")(")); // true
+        System.out.println(isBalanced("[()]")); // true
+        System.out.println(isBalanced("{[()]}")); // true
+        System.out.println(isBalanced("([{{[(())]}}])")); // true
+        System.out.println(isBalanced("{{[]()}}}}")); // false (лишние })
+        System.out.println(isBalanced("{[(])}")); // false (пересечение)
     }
 }
