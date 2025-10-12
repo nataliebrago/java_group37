@@ -1,8 +1,10 @@
-import homework15_1.MyArrayList;
+import homework17.CurrencyConverterConsumer;
+import homework17.CurrencyConverterFunction;
+import homework17.ReversedStringSupplier;
 
-import static homework16.Approach.pairs;
-import static homework16.BracketBalanceChecker.isBalanced;
-import static homework16.WordMultiple.wordMultiple;
+import java.util.function.Supplier;
+
+import static homework17.ReversedStringSupplier.getReversedStringSupplier;
 
 public class HomeWorkBrago {
 
@@ -402,7 +404,7 @@ public class HomeWorkBrago {
         printStudents(students, 5); // Курс 5
     }
          */
-        MyArrayList<String> list = new MyArrayList<>();
+        //MyArrayList<String> list = new MyArrayList<>();
 
        /* // Добавление
         list.add("Кот Сеня");
@@ -431,14 +433,28 @@ public class HomeWorkBrago {
         System.out.println(pairs(new String[]{"man", "moon", "main"})); // {"m": "n"}
         System.out.println(pairs(new String[]{"man", "moon", "good", "night"})); // {"g": "d", "m": "n", "n": "t"}
     }
-
          */
 
-        System.out.println(isBalanced(")(")); // true
+       /* System.out.println(isBalanced(")(")); // true
         System.out.println(isBalanced("[()]")); // true
         System.out.println(isBalanced("{[()]}")); // true
         System.out.println(isBalanced("([{{[(())]}}])")); // true
         System.out.println(isBalanced("{{[]()}}}}")); // false (лишние })
         System.out.println(isBalanced("{[(])}")); // false (пересечение)
+        */
+
+        //DayOfWeekFinder.dayOfWeekFinderMethod();
+        //NextTuesday.nextTuesdayMethod();
+        //HundredthBirthday.hundredthBirthdayMeth();
+        //PositiveNumberFinder.positiveNumberFinderMeth();
+        //CurrencyConverterFunction.currencyConverterMeth();
+        //CurrencyConverterConsumer.currencyConverterConsumerMeth();
+
+        // Получаем Supplier из метода
+        Supplier<String> supplier = getReversedStringSupplier();
+        // Вызываем get() для получения результата
+        String reversed = supplier.get();
+        // Выводим результат
+        System.out.println("Строка задом наперед: " + reversed);
     }
 }
