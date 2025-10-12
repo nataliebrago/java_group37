@@ -1,5 +1,6 @@
 import homework17.CurrencyConverterConsumer;
 import homework17.CurrencyConverterFunction;
+import homework17.HundredthBirthday;
 import homework17.ReversedStringSupplier;
 
 import java.util.function.Supplier;
@@ -448,13 +449,13 @@ public class HomeWorkBrago {
         //HundredthBirthday.hundredthBirthdayMeth();
         //PositiveNumberFinder.positiveNumberFinderMeth();
         //CurrencyConverterFunction.currencyConverterMeth();
-        //CurrencyConverterConsumer.currencyConverterConsumerMeth();
+        CurrencyConverterConsumer.currencyConverterConsumerMeth();
 
         // Получаем Supplier из метода
-        Supplier<String> supplier = getReversedStringSupplier();
+        //Supplier<String> supplier = getReversedStringSupplier();
         // Вызываем get() для получения результата
-        String reversed = supplier.get();
+        //String reversed = supplier.get();
         // Выводим результат
-        System.out.println("Строка задом наперед: " + reversed);
+        //System.out.println("Строка задом наперед: " + reversed);
     }
 }

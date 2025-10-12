@@ -19,6 +19,10 @@ public class CurrencyConverterConsumer {
         // Создаём Scanner для чтения из консоли
         Scanner scanner = new Scanner(System.in);
 
+        // Читаем входную строку от пользователя
+        System.out.print("Введите сумму в формате 'сумма BYN': ");
+        String input1 = scanner.nextLine();
+
         // Лямбда-функция, использующая Consumer<String> (принимает строку, ничего не возвращает, но выполняет вывод)
         Consumer<String> convertAndPrintUSD = input -> {
 
@@ -41,13 +45,8 @@ public class CurrencyConverterConsumer {
             }
         };
 
-        // Читаем входную строку от пользователя
-        System.out.print("Введите сумму в формате 'сумма BYN': ");
-        String input = scanner.nextLine();
-
         // Применяем Consumer (вызов accept выполняет лямбду)
-        convertAndPrintUSD.accept(input);
-
+        convertAndPrintUSD.accept(input1);
         scanner.close();  // Закрываем Scanner
     }
 }
