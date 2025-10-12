@@ -448,8 +448,8 @@ public class HomeWorkBrago {
         //NextTuesday.nextTuesdayMethod();
         //HundredthBirthday.hundredthBirthdayMeth();
         //PositiveNumberFinder.positiveNumberFinderMeth();
-        //CurrencyConverterFunction.currencyConverterMeth();
-        CurrencyConverterConsumer.currencyConverterConsumerMeth();
+        CurrencyConverterFunction.currencyConverterMeth();
+       //CurrencyConverterConsumer.currencyConverterConsumerMeth();
 
         // Получаем Supplier из метода
         //Supplier<String> supplier = getReversedStringSupplier();

@@ -13,8 +13,8 @@ public class CurrencyConverterConsumer {
 
     public static void currencyConverterConsumerMeth() {
 
-        // Курс обмена: 1 BYN = 0.3 USD
-        final double EXCHANGE_RATE = 0.3;
+        // Курс обмена: 1 BYN = 0.29 USD
+        final double EXCHANGE_RATE = 0.29;
 
         // Создаём Scanner для чтения из консоли
         Scanner scanner = new Scanner(System.in);
