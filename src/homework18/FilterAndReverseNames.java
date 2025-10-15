@@ -13,19 +13,19 @@ public class FilterAndReverseNames {
      * количество букв в имени. После чего вернуть список List имен, записанных буквами
      * задом наперед
      */
-    public static void filterAndReverseMeth () {
+    public static void filterAndReverseMeth() {
 
         // Создаём Map с данными (id - name)
         // Map.of() создает неизменяемую Map (Java 9+)
         Map<Integer, String> data = Map.of(
-                1, "Anna",    // Замена: была "Alice" (длина: 4, чётная → теперь не пройдёт фильтр по нечётной длине!)
-                2, "Boris",   // Замена: была "Bob" (длина: 5, нечётная)
-                3, "Clara",   // Замена: была "Charlie" (длина: 6, чётная)
-                5, "Denis",   // Замена: была "David" (длина: 5, нечётная)
-                8, "Emma",    // Замена: была "Eve" (длина: 4, чётная)
-                9, "Felix",   // Замена: была "Frank" (длина: 5, нечётная)
-                10, "Lina",   // Замена: была "Grace" (длина: 4, чётная)
-                13, "Hanna"   // Замена: была "Helen" (длина: 5, нечётная)
+                1, "Anna",
+                2, "Boris",
+                3, "Clara",
+                5, "Denis",
+                8, "Emma",
+                9, "Felix",
+                10, "Lina",
+                13, "Hanna"
         );
 
         // Набор id для фильтрации: Set для быстрой проверки contains()
