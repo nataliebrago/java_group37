@@ -2,6 +2,8 @@ import homework17.CurrencyConverterConsumer;
 import homework17.CurrencyConverterFunction;
 import homework17.HundredthBirthday;
 import homework17.ReversedStringSupplier;
+import homework18.FilterAndReverseNames;
+import homework18.StreamClass;
 
 import java.util.function.Supplier;
 
@@ -448,7 +450,7 @@ public class HomeWorkBrago {
         //NextTuesday.nextTuesdayMethod();
         //HundredthBirthday.hundredthBirthdayMeth();
         //PositiveNumberFinder.positiveNumberFinderMeth();
-        CurrencyConverterFunction.currencyConverterMeth();
+        //CurrencyConverterFunction.currencyConverterMeth();
        //CurrencyConverterConsumer.currencyConverterConsumerMeth();
 
         // Получаем Supplier из метода
@@ -457,5 +459,7 @@ public class HomeWorkBrago {
         //String reversed = supplier.get();
         // Выводим результат
         //System.out.println("Строка задом наперед: " + reversed);
+        //StreamClass.streamClassMeth();
+        FilterAndReverseNames.filterAndReverseMeth();
     }
 }
